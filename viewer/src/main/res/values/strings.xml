@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MapViewerParsijoo</string>
+    <string name="base_tile_url_a">http://mapa.parsijoo.ir/</string>
+    <string name="base_tile_url_b">http://mapb.parsijoo.ir/</string>
+    <string name="base_tile_url_c">http://mapc.parsijoo.ir/</string>
+    <string name="base_tile_url_d">http://mapd.parsijoo.ir/</string>
+    <string name="base_tile_url_e">http://mape.parsijoo.ir/</string>
+</resources>

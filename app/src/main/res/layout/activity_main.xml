@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ir.parsijoo.map.parsijoomapviewer.MainActivity">
+
+    <ir.parsijoo.map.android.Viewer
+        android:id="@+id/mapview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:api_key="ed67c0e7767243a0a7468d83734e11de"/>
+
+</android.support.constraint.ConstraintLayout>
