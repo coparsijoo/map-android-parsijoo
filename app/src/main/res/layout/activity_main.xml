@@ -10,6 +10,6 @@
         android:id="@+id/mapview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:api_key="ed67c0e7767243a0a7468d83734e11de"/>
+        app:api_key="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"/>
 
 </android.support.constraint.ConstraintLayout>
