@@ -10,7 +10,7 @@
         maven { url 'https://jitpack.io' }
 }
 dependencies {
- 	compile <span class="pl-s"><span class="pl-pds">'</span>com.github.coparsijoo:map-android-parsijoo:1.0;<span class="pl-pds">'</span></span>
+ 	compile <span class="pl-s"><span class="pl-pds">'</span>com.github.coparsijoo:map-android-parsijoo:1.0<span class="pl-pds">'</span></span>
 }</pre></div>
 
 <p dir="rtl">
