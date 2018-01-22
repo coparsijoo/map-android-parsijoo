@@ -24,3 +24,18 @@ dependencies {
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:api_key="@string/api_key"  /&gt;</pre></div>
+    
+    
+<p dir="rtl">
+      به جای api_key می بایست کلید api مربوط به نقشه پارسی جو را وارد نمایید. به منظور دریافت کلید api به لینک زیر مراجعه نمایید :
+</p>
+<p>
+        http://developers.parsijoo.ir/dashboard
+</p>
+
+<p dir="rtl">
+    به منظورآموزش استفاده از تمامی توابع api نقشه پارسی جو به لینک زیر مراجعه نمایید:
+</p>
+<p>
+        http://developers.parsijoo.ir/service/map
+</p>
