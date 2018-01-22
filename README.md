@@ -23,11 +23,11 @@ dependencies {
     android:id="@+id/mapview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:api_key="@string/api_key"  /&gt;</pre></div>
+    app:api_key="*********"  /&gt;</pre></div>
     
     
 <p dir="rtl">
-      به جای api_key می بایست کلید api مربوط به نقشه پارسی جو را وارد نمایید. به منظور دریافت کلید api به لینک زیر مراجعه نمایید :
+      به جای ********* می بایست کلید api مربوط به نقشه پارسی جو را وارد نمایید. به منظور دریافت کلید api به لینک زیر مراجعه نمایید :
 </p>
 <p>
         http://developers.parsijoo.ir/dashboard
