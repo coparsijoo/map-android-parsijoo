@@ -6,7 +6,7 @@
 <p dir="rtl">
 به منظور استفاده از ابزار نقشه پارسی جو در اپلیکیشن های اندروید قطعه کد زیر را در فایل gradle اپلیکیشن خود قرار دهید:
 </p>
-<div class="highlight highlight-source-groovy" style="direction: rtl;"><pre>repositories {
+<div class="highlight highlight-source-groovy"><pre>repositories {
         maven { url 'https://jitpack.io' }
 }
 dependencies {
