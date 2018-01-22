@@ -4,7 +4,7 @@
 
 به منظور استفاده از ابزار نقشه خود در اپلیکیشن های اندروید قطعه کد زیر را در فایل gradle اپلیکیشن خود قرار دهید:
 
-<div class="highlight highlight-source-groovy"><pre>repositories {
+<div class="highlight highlight-source-groovy" style="direction: rtl;"><pre>repositories {
         mavenCentral()
 }
 dependencies {
