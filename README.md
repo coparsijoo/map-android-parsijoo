@@ -29,7 +29,7 @@ dependencies {
       به جای ********* می بایست کلید api مربوط به نقشه پارسی جو را وارد نمایید. به منظور دریافت کلید api به لینک زیر مراجعه نمایید :
 </p>
 <p>
-        http://developers.parsijoo.ir/dashboard
+        http://developers.parsijoo.ir/dashboard/
 </p>
 
 <p dir="rtl">
