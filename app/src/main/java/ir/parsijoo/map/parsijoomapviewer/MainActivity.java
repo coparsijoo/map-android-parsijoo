@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.android.volley.NetworkResponse;
 
+import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.Marker;
 
 import java.io.UnsupportedEncodingException;
@@ -21,47 +22,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         viewer = findViewById(R.id.mapview);
-        //first_location_item = viewer.addMerker( 38.55, 54.69);
-
-        /*viewer.getAddress(31.8933972,54.367855,new Viewer.CallBackAddress() {
-            @Override
-            public void onResponse(HashMap<String,String > resultAddress) {
-                System.out.println("sysosout mainActivity " +resultAddress);
-            }
-            @Override
-            public void onError(NetworkResponse networkResponse) {
-                try {
-                    String body;
-                    body = new String(networkResponse.data,"UTF-8");
-                    System.out.println("sysosout " +body);
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                }
-            }
-        });*/
-
-        /*viewer.getSearch("امیرچخماق",new Viewer.CallBackSearch() {
-            @Override
-            public void onResponse(int resultNumber,ArrayList<HashMap<String, String>> resultAddress) {
-                System.out.println("sysosout mainActivity " +resultNumber);
-                for (int i = 0; i < resultAddress.size(); i++) {
-                    System.out.println("sysosout " +resultAddress.get(i).get("title"));
-                }
-            }
-            @Override
-            public void onError(NetworkResponse networkResponse) {
-                try {
-                    String body;
-                    body = new String(networkResponse.data,"UTF-8");
-                    System.out.println("sysosout " +body);
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                }
-            }
-        });*/
-
+        MapView mapView = viewer.getMapView();
         ArrayList<HashMap<String, Double>> middle_points = new ArrayList<HashMap<String, Double>>();
         HashMap<String,Double> point = new HashMap<>();
         point.put("lat",31.90862139692772);
@@ -70,14 +32,13 @@ public class MainActivity extends AppCompatActivity {
         viewer.getDirection(31.870725879312808,54.397498339843594,31.936595766279076,54.32059404296901,middle_points,new Viewer.CallBackDirection() {
             @Override
             public void onResponse(String wkt, float totalDistance, int totalTime, ArrayList<HashMap<String, String>> instructionList) {
-                System.out.println("sysosout " +instructionList);
+                System.out.println(instructionList);
             }
             @Override
             public void onError(NetworkResponse networkResponse) {
                 try {
                     String body;
                     body = new String(networkResponse.data,"UTF-8");
-                    System.out.println("sysosout " +body);
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }

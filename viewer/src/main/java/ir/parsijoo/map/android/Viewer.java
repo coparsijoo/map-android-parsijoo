@@ -4,10 +4,8 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
@@ -22,11 +20,8 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.JsonPrimitive;
 
 import org.osmdroid.config.Configuration;
-import org.osmdroid.config.DefaultConfigurationProvider;
-import org.osmdroid.config.IConfigurationProvider;
 import org.osmdroid.tileprovider.MapTile;
 import org.osmdroid.tileprovider.MapTileProviderBasic;
 import org.osmdroid.tileprovider.tilesource.ITileSource;
@@ -39,7 +34,6 @@ import org.osmdroid.views.overlay.ItemizedIconOverlay;
 import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.OverlayItem;
 import org.osmdroid.views.overlay.TilesOverlay;
-import org.osmdroid.views.overlay.infowindow.InfoWindow;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -97,9 +91,6 @@ public class Viewer extends RelativeLayout {
         mapView.setMaxZoomLevel(20);
         mapView.setMinZoomLevel(3);
         setConfigMultiTouch(true);
-        //parsijooHibridTileOverllay();
-        /*mapView.setMaxZoomLevel(19);
-        hibridTileOverlay.setEnabled(false);*/
         parsijooTileProvider();
         addPointLayer();
 
@@ -119,7 +110,6 @@ public class Viewer extends RelativeLayout {
 
     public void parsijooHibridTileOverllay() {
         final MapTileProviderBasic tileProvider = new MapTileProviderBasic(context);
-        //tileProvider.setTileRequestCompleteHandler(new HibridOverlaySimpleInvalidationHandler(mapView,this));
         ITileSource tileSource = new XYTileSource("Hibrid", 3, 17, 256, "",
                 new String[]{
                         context.getString(R.string.base_tile_url_a)+"GetHibrid?imageID=p_",
@@ -157,7 +147,7 @@ public class Viewer extends RelativeLayout {
         mapTileProviderBasicParsijoo.setTileSource(parsijoo);
         mapView.setTileProvider(mapTileProviderBasicParsijoo);
     }
-    public Marker addMerker(double y,double x){
+    public Marker addMarker(double y,double x){
         Marker marker = new Marker(mapView);
         marker.setPosition( new GeoPoint(y, x));
         marker.setAnchor(Marker.ANCHOR_CENTER, 1.0f);
@@ -180,7 +170,6 @@ public class Viewer extends RelativeLayout {
         this.callBackAddress = callBackAddress;
         String url = "http://developers.parsijoo.ir/web-service/v1/map/?type=address&x="+x+"&y="+y;
         RequestQueue queue = Volley.newRequestQueue(context);
-        // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
@@ -306,9 +295,7 @@ public class Viewer extends RelativeLayout {
                 }
                 callBackSearch.onError(error.networkResponse);
                 String body;
-                //get status code here
                 final String statusCode = String.valueOf(error.networkResponse.statusCode);
-                //get response body and parse with appropriate encoding
                 try {
                     body = new String(error.networkResponse.data,"UTF-8");
                     System.out.println("sysosout " +body);
@@ -324,8 +311,6 @@ public class Viewer extends RelativeLayout {
                 return params;
             };
         };
-        // Add the request to the RequestQueue.
-
         queue.add(stringRequest);
     }
 
@@ -361,7 +346,6 @@ public class Viewer extends RelativeLayout {
         String url = "http://developers.parsijoo.ir/web-service/v1/map/?type=direction&p="+p;
         System.out.println("sysosout url " +url);
         RequestQueue queue = Volley.newRequestQueue(context);
-        // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
@@ -395,12 +379,9 @@ public class Viewer extends RelativeLayout {
                 if (error == null || error.networkResponse == null) {
                     return;
                 }
-                System.out.println("sysosout " +error);
                 callBackDirection.onError(error.networkResponse);
                 String body;
-                //get status code here
                 final String statusCode = String.valueOf(error.networkResponse.statusCode);
-                //get response body and parse with appropriate encoding
                 try {
                     body = new String(error.networkResponse.data,"UTF-8");
                     System.out.println("sysosout " +body);
