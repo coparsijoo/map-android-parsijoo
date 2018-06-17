@@ -38,3 +38,19 @@ dependencies {
 <p>
         http://developers.parsijoo.ir/service/map
 </p>
+<p dir="rtl">
+        دسترسی های مورد نیاز 
+</p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">uses-permission</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.permission.ACCESS_FINE_LOCATION<span class="pl-pds">"</span></span>/&gt;
+&lt;<span class="pl-ent">uses-permission</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.permission.INTERNET<span class="pl-pds">"</span></span> /&gt;
+&lt;<span class="pl-ent">uses-permission</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.permission.ACCESS_NETWORK_STATE<span class="pl-pds">"</span></span>  /&gt;
+&lt;<span class="pl-ent">uses-permission</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.permission.WRITE_EXTERNAL_STORAGE<span class="pl-pds">"</span></span> /&gt;</pre></div>
+<p dir="rtl">
+        برای اندروید 6 به بالا(API level 23)، می بایست مجوز ها به صورت داینامیک از کاربر دریافت گردد با استفاده از دستور زیر: <br/>
+        
+</p>
+<p>
+        <code dir="ltr">RequestPermission</code>
+</p>
+
